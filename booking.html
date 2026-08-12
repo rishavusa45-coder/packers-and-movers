@@ -72,11 +72,7 @@
 </div>
 
 <script>
-
 function sendWhatsApp() {
-
-    // YOUR WHATSAPP NUMBER
-    var whatsappNumber = "919931394186";
 
     var name = document.getElementById("name").value;
     var phone = document.getElementById("phone").value;
@@ -86,19 +82,20 @@ function sendWhatsApp() {
     var message = document.getElementById("message").value;
 
     var text =
-        "Hello, I want to book your service.%0A%0A" +
-        "*Name:* " + name + "%0A" +
-        "*Phone:* " + phone + "%0A" +
-        "*Pickup:* " + pickup + "%0A" +
-        "*Drop:* " + drop + "%0A" +
-        "*Date:* " + date + "%0A" +
-        "*Details:* " + message;
+        "Hello, I want to book your service.\n\n" +
+        "Name: " + name + "\n" +
+        "Phone: " + phone + "\n" +
+        "Pickup: " + pickup + "\n" +
+        "Drop: " + drop + "\n" +
+        "Date: " + date + "\n" +
+        "Details: " + message;
 
-var url = "https://wa.me/" + whatsappNumber + "?text=" + text;
+    var whatsappURL =
+        "https://wa.me/919931394186?text=" +
+        encodeURIComponent(text);
 
-window.open(url, "_blank");
+    window.location.href = whatsappURL;
 }
-
 </script>
 
 </body>
